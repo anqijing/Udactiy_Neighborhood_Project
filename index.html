@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neighborhood Map</title>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/app.css" />
+	<script type="text/javascript" href='js/app.js'></script>
+</head>
+<body>
+<div class='contianer' id ='main-title' >
+	<div class='row' id = 'title'>
+		<h3>Popular restaurants in my neighborhood </h3>
+	</div>
+</div>
+<div id='main-body'>
+	<div class='row' >
+		<div class='col-md-3' id='list-box'>
+		<div class='row'>
+			<input placeholder="Search…" type="search" id='input' data-bind='textInput: query, valueUpdate: 'afterkeydown'' >
+		</div>
+		<div id='item-list'>
+			<ul data-bind='foreach:selectedItem'>
+				<li data-bind='text:title, click: $parent.showInfoWindow'></li>
+			</ul>
+		</div>
+		</div>
+	
+		<div class='col-md-9' id='map'>			
+		</div>
+	</div> 
+</div>
+<script async defer
+        src=
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyDDhVcxi3N1T_FKscnBd9PE4FTCH7B65ug&v=3&callback=initmap">
+</script>
+<script type="text/javascript" src='js/knockout-3.4.2.js'></script>
+<script type="text/javascript" src='js/jquery.min.js'></script>
+<script type="text/javascript" src='js/main.js'></script>
+</body>
+</html>
